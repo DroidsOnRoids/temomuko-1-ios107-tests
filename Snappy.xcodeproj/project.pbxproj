@@ -22,6 +22,7 @@
 		E52DC6A81EE187FE00FBA667 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DC6A71EE187FE00FBA667 /* APITests.swift */; };
 		E5F484E11EE7E89A006BC075 /* SnapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F484E01EE7E89A006BC075 /* SnapViewControllerTests.swift */; };
 		E5F484E31EE7EC56006BC075 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E5F484E21EE7EC56006BC075 /* sample.json */; };
+		E5F484E51EE80FD6006BC075 /* PreviewViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F484E41EE80FD6006BC075 /* PreviewViewControllerTests.swift */; };
 		F4BB437D1DD4F20D00F675C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB437C1DD4F20D00F675C9 /* AppDelegate.swift */; };
 		F4BB43841DD4F20D00F675C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BB43831DD4F20D00F675C9 /* Assets.xcassets */; };
 		F4BB43871DD4F20D00F675C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BB43851DD4F20D00F675C9 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		E52DC6A71EE187FE00FBA667 /* APITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		E5F484E01EE7E89A006BC075 /* SnapViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapViewControllerTests.swift; sourceTree = "<group>"; };
 		E5F484E21EE7EC56006BC075 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		E5F484E41EE80FD6006BC075 /* PreviewViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewControllerTests.swift; sourceTree = "<group>"; };
 		E63C9EE81E83E22B553D5DDE /* Pods_Snappy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snappy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BB43791DD4F20D00F675C9 /* Snappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BB437C1DD4F20D00F675C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				E52DC69F1EE1846C00FBA667 /* UIIimageExtensionTests.swift */,
 				E52DC6A71EE187FE00FBA667 /* APITests.swift */,
 				E5F484E21EE7EC56006BC075 /* sample.json */,
+				E5F484E41EE80FD6006BC075 /* PreviewViewControllerTests.swift */,
 				E5F484E01EE7E89A006BC075 /* SnapViewControllerTests.swift */,
 				E52DC6A11EE1846C00FBA667 /* Info.plist */,
 			);
@@ -506,6 +509,7 @@
 			files = (
 				E52DC6A81EE187FE00FBA667 /* APITests.swift in Sources */,
 				E5F484E11EE7E89A006BC075 /* SnapViewControllerTests.swift in Sources */,
+				E5F484E51EE80FD6006BC075 /* PreviewViewControllerTests.swift in Sources */,
 				E52DC6A01EE1846C00FBA667 /* UIIimageExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

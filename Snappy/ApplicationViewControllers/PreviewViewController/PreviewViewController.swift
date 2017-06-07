@@ -11,11 +11,11 @@ import Photos
 
 class PreviewViewController: UIViewController {
 
-    @IBOutlet private weak var previewImageView: UIImageView!
-    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    private var filteredImage: UIImage?
-    private var imageSaved = false
+    var filteredImage: UIImage?
+    var imageSaved = false
     var image: UIImage?
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class PreviewViewController: UIViewController {
         previewImageView.image = image
     }
     
-    private func setFilteredImage() {
+    func setFilteredImage() {
         if let filteredImage = filteredImage {
             previewImageView.image = filteredImage
         
@@ -61,7 +61,7 @@ class PreviewViewController: UIViewController {
         return UIImage()
     }
     
-    @IBAction private func segmentedControlAction(_ sender: Any) {
+    @IBAction func segmentedControlAction(_ sender: Any) {
         imageSaved = false
         
         switch segmentedControl.selectedSegmentIndex {
@@ -72,7 +72,7 @@ class PreviewViewController: UIViewController {
         }
     }
     
-    @IBAction private func saveButtonAction(_ sender: Any) {
+    @IBAction func saveButtonAction(_ sender: Any) {
         guard let image = previewImageView.image, !imageSaved else { return }
         
         let croppedImage = crop(image: image.fixImageOrientation())
@@ -86,19 +86,14 @@ class PreviewViewController: UIViewController {
         })
     }
     
-    @IBAction private func closeButtonAction(_ sender: Any) {
+    @IBAction func closeButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func sendButtonAction(_ sender: UIButton) {
         guard let image = previewImageView.image?.fixImageOrientation() else { return }
         
-        let croppedImage = crop(image: image)
-        let sizeRatio = croppedImage.size.height / croppedImage.size.width
-        let maxSize: CGFloat = 1000.0
-        let newSize = CGSize(width: maxSize / sizeRatio, height: maxSize)
-        let scaledImage = croppedImage.resized(newSize: newSize)
-        
+        let scaledImage = croppedImage(image: image)
         let endpoint = Endpoint.uploadPhoto(image: scaledImage, fromUserId: 1, toUserId: nil)
         
         sender.isEnabled = false
@@ -109,4 +104,14 @@ class PreviewViewController: UIViewController {
             print("Upload success: \(success)")
         }
     }
+    
+    func croppedImage(image: UIImage) -> UIImage {
+        let croppedImage = crop(image: image)
+        let sizeRatio = croppedImage.size.height / croppedImage.size.width
+        let maxSize: CGFloat = 1000.0
+        let newSize = CGSize(width: maxSize / sizeRatio, height: maxSize)
+        
+        return croppedImage.resized(newSize: newSize)
+    }
+
 }
