@@ -49,7 +49,6 @@ class SnapViewController: UIViewController {
     private func removeImage() {
         let endpoint = Endpoint.removePhoto(filename: snap.fileName, toUserId: nil)
         
-        
         API.request(endpoint) { [weak self] success, response in
             print("remove success: \(success)")
             if success {
@@ -58,7 +57,7 @@ class SnapViewController: UIViewController {
         }
     }
     
-    private func downloadImage() {
+    func downloadImage() {
         guard let url = URL(string: snap.url) else { return }
         
         let request = URLRequest(url: url)
